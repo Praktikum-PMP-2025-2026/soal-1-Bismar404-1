@@ -64,6 +64,7 @@
 
     int sumSementara;
     int sumMax = data[0];
+    //hitung subarray berurutan dengan jumlah maksimum dengan looping berkali-kali
     for(int i=0; i<N; i++) {
         sumSementara = 0;
         for(int j=i; j<N; j++) {
@@ -71,7 +72,8 @@
             if(sumSementara > sumMax) {
                 sumMax = sumSementara;
             }
-            else if(sumSementara < 0) {
+            //jika sum sementara sudah negatif, cek subarray berikutnya
+            else if(data[j] < 0) {
                 break;
             }
         }
@@ -82,7 +84,7 @@
         printf("%d ", data[i]);
     }
     printf("%d", data[N-1]);
-
     printf("\nMAX_SUM %d\n", sumMax);
 
  }
+ 
