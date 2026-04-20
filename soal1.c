@@ -11,8 +11,8 @@
  #include <stdio.h>
  #include <string.h>
  
- int semuaHilang(int data[], int N) {
-    for(int i=0; i<N; i++){
+ int semuaHilang(int data[], int N, int start) {
+    for(int i=start; i<N; i++){
         if(data[i]!=-1){
             return 0;
         }
@@ -38,6 +38,14 @@
                     }
                 }
             }
+            else if(data[i-1]!=-1 && i!=0 && semuaHilang(data, N, i)){ //kiri ada, kanan hilang semua
+                for(int j=i+1; j<N; j++){
+                    if(data[j]!=-1 && j!=N){
+                        data[i] = (data[i-1]+data[j])/2;
+                        break;
+                    }
+                }
+            }
             else if(i==0){ //data hilang di paling kiri
                 for(int j=i+1; j<N; j++){
                     if(data[j]!=-1){
@@ -54,7 +62,7 @@
                     }
                 }
             }
-            else if(semuaHilang(data, N)==1){ //semua data hilang
+            else if(semuaHilang(data, N, 0)==1){ //semua data hilang
                 for(int j=0; j<N; j++){
                     data[j] = 0;
                 }
@@ -87,3 +95,4 @@
     printf("\nMAX_SUM %d\n", sumMax);
 
  }
+ 
