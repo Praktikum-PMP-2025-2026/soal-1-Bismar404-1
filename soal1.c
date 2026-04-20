@@ -62,17 +62,18 @@
         }
     }
 
-    int sumSementara = 0;
+    int sumSementara;
     int sumMax = data[0];
-    for(int i=0; i<N; i++){
-        if(data[i]>=0){
-            sumSementara += data[i];
-            if(sumSementara > sumMax){
+    for(int i=0; i<N; i++) {
+        sumSementara = 0;
+        for(int j=i; j<N; j++) {
+            sumSementara += data[j];
+            if(sumSementara > sumMax) {
                 sumMax = sumSementara;
             }
-        }
-        else{
-            sumSementara = 0;
+            else if(sumSementara < 0) {
+                break;
+            }
         }
     }
 
