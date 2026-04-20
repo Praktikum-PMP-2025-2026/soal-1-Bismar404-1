@@ -69,7 +69,7 @@
         sumSementara = 0;
         for(int j=i; j<N; j++) {
             sumSementara += data[j];
-            if(sumSementara > sumMax) {
+            if((sumSementara > sumMax)&& data[j]>=0)  {
                 sumMax = sumSementara;
             }
             //jika sum sementara sudah negatif, cek subarray berikutnya
@@ -87,4 +87,3 @@
     printf("\nMAX_SUM %d\n", sumMax);
 
  }
- 
