@@ -65,14 +65,14 @@
     int sumSementara = 0;
     int sumMax = data[0];
     for(int i=0; i<N; i++){
-        sumSementara += data[i];
-        if(sumSementara > sumMax){
-            sumMax = sumSementara;
-        }
-        for(int j=i; j<N; j++){
-            if(sumSementara < sumMax){
-                sumSementara -= data[j];
+        if(data[i]>=0){
+            sumSementara += data[i];
+            if(sumSementara > sumMax){
+                sumMax = sumSementara;
             }
+        }
+        else{
+            sumSementara = 0;
         }
     }
 
