@@ -52,8 +52,13 @@
                         data[i] = data[j];
                         break;
                     }
-                    else if(data[j]==-1){ 
-                        data[j] = data[i];
+                    else{
+                        for(int k=i-1; k>=0; k--){
+                            if(data[k]!=-1){
+                                data[j] = data[k];
+                                break;
+                            }
+                        }
                     }
                 }
             }
