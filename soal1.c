@@ -77,8 +77,8 @@
     }
 
     printf("RECOVERED ");
-    for(int i=0; i<N; i++) {
-        printf("%d ", data[i]);
+    for(int i=0; i<N-1; i++) {
+        printf("%d", data[i]);
     }
 
     printf("\nMAX_SUM %d\n", sumMax);
