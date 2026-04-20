@@ -41,14 +41,14 @@
                         break;
                     }
                     else if(data[j]!=-1 && j!=N && data[i-1] <= 0 && data[j] <= 0){
-                        data[i] = (data[i-1]+data[j]-1)/2;
+                        data[i] = (data[i-1]+data[j]-1)/2;//pada negatif, bulatkan nilai ke bawah
                         break;
                     }
-                    else if(data[j]!=-1 && j!=N && data[i-1] > 0 && data[j] < 0){
+                    else if(data[j]!=-1 && j!=N && data[i-1] > 0 && data[j] <= 0){
                         data[i] = (data[i-1]+data[j]-0.5)/2;
                         break;
                     }
-                    else if(data[j]!=-1 && j!=N && data[i-1] < 0 && data[j] > 0){
+                    else if(data[j]!=-1 && j!=N && data[i-1] <= 0 && data[j] > 0){
                         data[i] = (data[i-1]+data[j]+0.5)/2;
                         break;
                     }
