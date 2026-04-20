@@ -28,10 +28,11 @@
         scanf("%d", &data[i]);
     }
 
-    for(int i=0; i<N; i++) {
-        if(N==1 && data[i]==-1){
-            data[i] = 0;
+    if(N==1 && data[0]==-1){
+            data[0] = 0;
         }
+
+    for(int i=0; i<N; i++) {
         if(data[i]==-1){
             if(data[i-1]!=-1 && i!=0 && data[N-1]!=-1){ //kiri ada, kanan hilang (tidak termsuk pojok kanan hilang)
                 for(int j=i+1; j<N; j++){
