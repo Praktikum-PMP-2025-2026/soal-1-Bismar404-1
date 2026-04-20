@@ -101,6 +101,14 @@
             }
         }
     }
+    if(sumMax < 0){
+        for(int i=0; i<N; i++){
+            sumSementara = data [i];
+            if(sumSementara > sumMax){
+                sumMax = sumSementara;
+            }
+        }
+    }
 
     printf("RECOVERED ");
     for(int i=0; i<N-1; i++) {
