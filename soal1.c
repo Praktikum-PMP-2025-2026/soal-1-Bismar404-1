@@ -38,14 +38,6 @@
                     }
                 }
             }
-            else if(data[i-1]!=-1 && i!=0 && semuaHilang(data, N, i)){ //kiri ada, kanan hilang semua
-                for(int j=i+1; j<N; j++){
-                    if(data[j]!=-1 && j!=N){
-                        data[i] = (data[i-1]+data[j])/2;
-                        break;
-                    }
-                }
-            }
             else if(i==0){ //data hilang di paling kiri
                 for(int j=i+1; j<N; j++){
                     if(data[j]!=-1){
@@ -59,6 +51,9 @@
                     if(data[j]!=-1){
                         data[i] = data[j];
                         break;
+                    }
+                    else if(data[j]==-1){ 
+                        data[j] = data[i];
                     }
                 }
             }
