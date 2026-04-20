@@ -29,11 +29,26 @@
     }
 
     for(int i=0; i<N; i++) {
+        if(N==1 && data[i]==-1){
+            data[i] = 0;
+        }
         if(data[i]==-1){
             if(data[i-1]!=-1 && i!=0 && data[N-1]!=-1){ //kiri ada, kanan hilang (tidak termsuk pojok kanan hilang)
                 for(int j=i+1; j<N; j++){
-                    if(data[j]!=-1 && j!=N){
+                    if(data[j]!=-1 && j!=N && data[i-1] > 0 && data[j] > 0){
                         data[i] = (data[i-1]+data[j])/2;
+                        break;
+                    }
+                    else if(data[j]!=-1 && j!=N && data[i-1] <= 0 && data[j] <= 0){
+                        data[i] = (data[i-1]+data[j]-1)/2;
+                        break;
+                    }
+                    else if(data[j]!=-1 && j!=N && data[i-1] > 0 && data[j] < 0){
+                        data[i] = (data[i-1]+data[j]-0.5)/2;
+                        break;
+                    }
+                    else if(data[j]!=-1 && j!=N && data[i-1] < 0 && data[j] > 0){
+                        data[i] = (data[i-1]+data[j]+0.5)/2;
                         break;
                     }
                 }
